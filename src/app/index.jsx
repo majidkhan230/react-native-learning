@@ -9,7 +9,8 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { router } from "expo-router";
-import axios from "axios"
+import axios from "axios";
+import {images} from "@/src/assets/images/index.js"
 const index = () => {
   
     const [products, setProducts] = useState([
@@ -90,7 +91,7 @@ const index = () => {
     <View style={styles.container}>
       <Text style={styles.textContainer}>index</Text>
       <TouchableOpacity onPress={handleClick} style={styles.btnContainer}>
-        <Text>Click Me</Text>
+        <Text >Click Me</Text>
       </TouchableOpacity>
       {/* <ScrollView>
     <View>
@@ -118,7 +119,9 @@ const index = () => {
     <View >
     <Text style={styles.titleContainer}>{title}</Text>
     <Text>{description}</Text>
-    <Image source={{uri:image}} width={100} height={100} />
+{image ? (    <Image source={{uri:image}} width={100} height={100} />) : null}
+    {/* <Image source={images.img05}  tintColor="rgba(255, 0, 0, 0.5)"  blurRadius={20} style={{ width: 100, height: 100, borderRadius: 10 }} resizeMode="cover" /> */}
+    {/* <Image source={images.img05}    style={{ width: 100, height: 100, borderRadius: 10 }} resizeMode="cover" /> */}
     </View>
   )
 }}/>
@@ -142,8 +145,8 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   container: {
-    flex: 1,
-    justifyContent: "center",
+    // flex: 1,
+    // justifyContent: "center",
     alignItems: "center",
     padding: 16,
   },
