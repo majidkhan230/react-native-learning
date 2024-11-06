@@ -1,5 +1,6 @@
 import {
   FlatList,
+  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -8,8 +9,70 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { router } from "expo-router";
-import {axios} from "axios"
+import axios from "axios"
 const index = () => {
+  
+    const [products, setProducts] = useState([
+      {
+        key: 1,
+        title: "Smartphone",
+        description:
+          "A high-end smartphone with a powerful processor and stunning display.",
+      },
+      {
+        key: 2,
+        title: "Laptop",
+        description:
+          "A lightweight laptop with long battery life, ideal for productivity on the go.",
+      },
+      {
+        key: 3,
+        title: "Wireless Earbuds",
+        description:
+          "Compact earbuds with noise cancellation and clear sound quality.",
+      },
+      {
+        key: 4,
+        title: "Smartwatch",
+        description:
+          "A smartwatch with fitness tracking, notifications, and heart rate monitor.",
+      },
+      {
+        key: 5,
+        title: "Gaming Console",
+        description:
+          "A console offering immersive gaming with high-definition graphics.",
+      },
+      {
+        key: 6,
+        title: "Tablet",
+        description:
+          "A versatile tablet for browsing, reading, and media consumption.",
+      },
+      {
+        key: 7,
+        title: "Bluetooth Speaker",
+        description:
+          "Portable speaker with deep bass and excellent audio quality.",
+      },
+      {
+        key: 8,
+        title: "Digital Camera",
+        description:
+          "High-resolution camera for capturing stunning photos and videos.",
+      },
+      {
+        key: 9,
+        title: "Smart Home Assistant",
+        description: "Voice-activated assistant for managing smart home devices.",
+      },
+      {
+        key: 10,
+        title: "Fitness Tracker",
+        description:
+          "Wearable tracker for monitoring steps, calories, and sleep quality.",
+      },
+    ]);
 
   const getData = async()=>{
     const res = await axios.get("https://fakestoreapi.com/products")
@@ -17,68 +80,6 @@ const index = () => {
     setProducts(data)
   }
 
-
-  const [products, setProducts] = useState([
-    {
-      key: 1,
-      title: "Smartphone",
-      description:
-        "A high-end smartphone with a powerful processor and stunning display.",
-    },
-    {
-      key: 2,
-      title: "Laptop",
-      description:
-        "A lightweight laptop with long battery life, ideal for productivity on the go.",
-    },
-    {
-      key: 3,
-      title: "Wireless Earbuds",
-      description:
-        "Compact earbuds with noise cancellation and clear sound quality.",
-    },
-    {
-      key: 4,
-      title: "Smartwatch",
-      description:
-        "A smartwatch with fitness tracking, notifications, and heart rate monitor.",
-    },
-    {
-      key: 5,
-      title: "Gaming Console",
-      description:
-        "A console offering immersive gaming with high-definition graphics.",
-    },
-    {
-      key: 6,
-      title: "Tablet",
-      description:
-        "A versatile tablet for browsing, reading, and media consumption.",
-    },
-    {
-      key: 7,
-      title: "Bluetooth Speaker",
-      description:
-        "Portable speaker with deep bass and excellent audio quality.",
-    },
-    {
-      key: 8,
-      title: "Digital Camera",
-      description:
-        "High-resolution camera for capturing stunning photos and videos.",
-    },
-    {
-      key: 9,
-      title: "Smart Home Assistant",
-      description: "Voice-activated assistant for managing smart home devices.",
-    },
-    {
-      key: 10,
-      title: "Fitness Tracker",
-      description:
-        "Wearable tracker for monitoring steps, calories, and sleep quality.",
-    },
-  ]);
 
   const handleClick = () => {
     console.log("button clicked");
@@ -104,20 +105,25 @@ const index = () => {
     </View>
     </ScrollView> */}
 
-      {/* <View>
+<TouchableOpacity onPress={getData}>
+  <Text>Get Data</Text>
+</TouchableOpacity>
+
+
+
+      <View>
  <FlatList data={products} renderItem={({item})=>{
-  const {title,description} = item
+  const {image,title,description} = item
   return(
     <View >
     <Text style={styles.titleContainer}>{title}</Text>
     <Text>{description}</Text>
+    <Image source={{uri:image}} width={100} height={100} />
     </View>
   )
 }}/>
-</View> */}
+</View>
 
-
-<TouchableOpacity onPress={getData}>Get Data</TouchableOpacity>
 
     </View>
   );
