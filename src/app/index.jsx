@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { Alert, FlatList, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 
 import TodoItem from "../components/TodoItem.jsx";
@@ -40,11 +40,18 @@ prev.filter((item)=>(item.id != id))
 ))
   ))
 
-  const SubmitHandler = (text)=>(
+  const SubmitHandler = (text)=>{
+
+  if(text.length > 3){
     setTodos((prev)=>(
       [{id:Math.random(),title:text},...prev]
     ))
-  )
+  }  
+  else{
+    Alert.alert("OOPS","todo must over 3 char long!",[{text:"undestood",onPress:()=>{console.log("clicked on understood")}}])
+  }
+    
+}
 
   return (
     <View style={styles.container}>
