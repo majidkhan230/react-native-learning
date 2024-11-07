@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import TodoItem from "../components/TodoItem.jsx";
 import Header from "../components/Header.jsx";
+import AddTodos from "../components/AddTodos.jsx";
 
 const index = () => {
   const [todos, setTodos] = useState([
@@ -39,12 +40,18 @@ prev.filter((item)=>(item.id != id))
 ))
   ))
 
+  const SubmitHandler = (text)=>(
+    setTodos((prev)=>(
+      [{id:Math.random(),title:text},...prev]
+    ))
+  )
+
   return (
     <View style={styles.container}>
       {/* header */}
      <Header/>
       <View  style={styles.content}>
-        {/* to form */}
+     <AddTodos SubmitHandler={SubmitHandler} />
         <View style={styles.list}>
           <FlatList
           data={todos}
