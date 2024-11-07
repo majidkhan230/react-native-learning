@@ -1,6 +1,9 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 
+import TodoItem from "../components/TodoItem.jsx";
+import Header from "../components/Header.jsx";
+
 const index = () => {
   const [todos, setTodos] = useState([
     {
@@ -27,21 +30,27 @@ const index = () => {
       description: "Read 20 pages of 'Atomic Habits'",
       completed: false,
     },
+    
   ]);
-console.log(todos)
+
+  const pressHandler=((id)=>(
+setTodos((prev)=>(
+prev.filter((item)=>(item.id != id))
+))
+  ))
+
   return (
     <View style={styles.container}>
       {/* header */}
-      <Text>Header</Text>
+     <Header/>
       <View  style={styles.content}>
         {/* to form */}
         <View style={styles.list}>
-          <Text>List</Text>
           <FlatList
           data={todos}
           keyExtractor={(item)=>item.id.toString()}
           renderItem={({item})=>(
-            <Text>{item.title}</Text>
+          <TodoItem item={item}  pressHandler={pressHandler}/>
           )}
           />
         </View>
