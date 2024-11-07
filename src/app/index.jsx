@@ -1,4 +1,4 @@
-import { Alert, FlatList, StyleSheet, Text, View } from "react-native";
+import { Alert, FlatList, Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View, } from "react-native";
 import React, { useState } from "react";
 
 import TodoItem from "../components/TodoItem.jsx";
@@ -54,6 +54,9 @@ prev.filter((item)=>(item.id != id))
 }
 
   return (
+    <TouchableWithoutFeedback onPress={()=>{
+      Keyboard.dismiss()
+    }}>
     <View style={styles.container}>
       {/* header */}
      <Header/>
@@ -70,6 +73,8 @@ prev.filter((item)=>(item.id != id))
         </View>
       </View>
     </View>
+    </TouchableWithoutFeedback>
+
   );
 };
 
