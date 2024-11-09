@@ -1,18 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import flexboxlearning from '../screens/flexboxlearning'
+import Flexbox from '../screens/Flexbox'
 
 const index = () => {
   return (
-    <View>
-      <Text style={styles.title}>index</Text>
-    </View>
+   <Flexbox/>
   )
 }
 
 export default index
 
 const styles = StyleSheet.create({
-    title:{
-paddingTop:40,
-    }
+//     title:{
+// paddingTop:40,
+//     }
 })
