@@ -5,7 +5,6 @@ const AddTodos = ({SubmitHandler}) => {
   const [text, setText] = useState("");
   return (
     <View>
-      <Text>AddTodos</Text>
       <TextInput 
       style={styles.input}
       placeholder="add todo..." 
