@@ -60,6 +60,7 @@ prev.filter((item)=>(item.id != id))
     <View style={styles.container}>
       {/* header */}
      <Header/>
+    
       <View  style={styles.content}>
      <AddTodos SubmitHandler={SubmitHandler} />
         <View style={styles.list}>
