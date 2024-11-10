@@ -1,10 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
-
-import Flexbox from "../screens/Flexbox";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
-
+import Home from "../screens/Home";
+import Flexbox from "../screens/Flexbox";
 SplashScreen.preventAutoHideAsync();
 
 const index = () => {
@@ -14,18 +12,15 @@ const index = () => {
   // console.log(data)
 
   return (
-    <View>
-      <Text style={styles.title}>Hello this is me</Text>
-      <Flexbox />
-    </View>
+   <Home/>
   );
 };
 
 export default index;
 
 const styles = StyleSheet.create({
-  title: {
-    fontFamily: "Nanito Regular",
-    paddingTop: 40,
-  },
+  // title: {
+  //   fontFamily: "Nanito Regular",
+  //   paddingTop: 40,
+  // },
 });
