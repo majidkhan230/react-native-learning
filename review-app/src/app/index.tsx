@@ -1,18 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import flexboxlearning from '../screens/flexboxlearning'
-import Flexbox from '../screens/Flexbox'
+import { StyleSheet, Text, View } from "react-native";
+
+import Flexbox from "../screens/Flexbox";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
+
+SplashScreen.preventAutoHideAsync();
 
 const index = () => {
-  return (
-   <Flexbox/>
-  )
-}
+  const [loaded, errors] = useFonts({
+    "Nanito Regular": require("@/src/assets/fonts/Nunito-Regular.ttf"),
+  });
+  // console.log(data)
 
-export default index
+  return (
+    <View>
+      <Text style={styles.title}>Hello this is me</Text>
+      <Flexbox />
+    </View>
+  );
+};
+
+export default index;
 
 const styles = StyleSheet.create({
-//     title:{
-// paddingTop:40,
-//     }
-})
+  title: {
+    fontFamily: "Nanito Regular",
+    paddingTop: 40,
+  },
+});
