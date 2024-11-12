@@ -3,7 +3,6 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import Flexbox from "../screens/Flexbox";
 import { useEffect } from "react";
-import HomeStack from "./routes/homeStack";
 import { Home } from "../screens/Home";
 import About from "../screens/About";
 import ReviewDetails from "../screens/ReviewDetails";

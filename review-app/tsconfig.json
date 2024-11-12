@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "src/app/routes/HomeStack.jsx", "src/app/index.jsx", "src/styles/global.js", "src/screens/ReviewDetails.jsx", "src/screens/Home.jsx", "src/screens/Flexbox.jsx", "src/screens/About.jsx"  ]
 }
