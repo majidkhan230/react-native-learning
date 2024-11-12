@@ -23,7 +23,7 @@ export const Home = () => {
   const navigation = useNavigation();
   return (
     <View style={globalStyles.container}>
-      <Text style={globalStyles.titleText}>Home Page</Text>
+      {/* <Text style={globalStyles.titleText}>Home Page</Text> */}
     <FlatList
     data={reviews}
     renderItem={({item})=>(

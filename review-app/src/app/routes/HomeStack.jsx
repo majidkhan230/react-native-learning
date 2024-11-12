@@ -10,30 +10,29 @@ const HomeStack = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+    // <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home" >
         <Stack.Screen 
           name="Home" 
           component={Home} 
+          options={{
+            title: "Home",
+            headerTintColor: "white",
+            headerStyle: {
+              backgroundColor: "black",
+              height: 40,
+            },
+            headerTitleAlign: "center", // This aligns the title to the center
+          }}
         />
         
-        <Stack.Screen
-          name="About" // Add the name prop back here
-          component={About}
-          // options={{
-          //   title: 'About mjd', // Set a custom title
-          //   headerStyle: { backgroundColor: '#6200ee' }, // Set background color
-          //   headerTintColor: '#fff', // Set text color
-          //   headerTitleStyle: { fontWeight: 'bold', fontSize: 20 }, // Style title text
-          // }}
-        />
         
         <Stack.Screen
           name="ReviewDetails"
           component={ReviewDetails}
         />
       </Stack.Navigator>
-    </NavigationContainer>
+    // </NavigationContainer>
   );
 };
 

@@ -9,7 +9,7 @@ const ReviewDetails = ({route}) => {
   // const navigation = useNavigation();
   return (
     <View style={globalStyles.container}>
-    <Text style={globalStyles.titleText}>Review Details</Text>
+    {/* <Text style={globalStyles.titleText}>Review Details</Text> */}
  <View>
   <Text>{title}</Text>
   <Text>rating:{rating}</Text>

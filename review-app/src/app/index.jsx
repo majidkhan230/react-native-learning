@@ -7,6 +7,9 @@ import { Home } from "../screens/Home";
 import About from "../screens/About";
 import ReviewDetails from "../screens/ReviewDetails";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeStack from "./routes/HomeStack";
+import Drawerr from "./routes/Drawerr";
+import { NavigationContainer } from "@react-navigation/native";
 
 
 SplashScreen.preventAutoHideAsync();
@@ -27,11 +30,20 @@ const index = () => {
   }
   const Stack = createNativeStackNavigator();
   return (
-    <Stack.Navigator initialRouteName="Home" >
-    <Stack.Screen name="Home" component={Home}></Stack.Screen>
-    <Stack.Screen name="About" component={About}></Stack.Screen>
-    <Stack.Screen name="ReviewDetails" component={ReviewDetails}></Stack.Screen>
-  </Stack.Navigator>
+   <>
+    {/* <HomeStack/> */}
+    <Drawerr/>
+   </>
+  //   <Stack.Navigator initialRouteName="Home" >
+  //   <Stack.Screen name="Home" component={Home} options={{
+  //     title:"Home",
+  //     headerStyle:{
+  //       backgroundColor:"red",
+  //     }
+  //   }} ></Stack.Screen>
+  //   <Stack.Screen name="About" component={About}></Stack.Screen>
+  //   <Stack.Screen name="ReviewDetails" component={ReviewDetails}></Stack.Screen>
+  // </Stack.Navigator>
   );
 };
 
