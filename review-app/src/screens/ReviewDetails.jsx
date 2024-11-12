@@ -1,12 +1,19 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { globalStyles } from '../styles/global'
+import { useNavigation } from 'expo-router';
 
-const ReviewDetails = () => {
+const ReviewDetails = ({route}) => {
+  const {title,rating} = route.params;
+  // console.log(data)
+  // const navigation = useNavigation();
   return (
     <View style={globalStyles.container}>
     <Text style={globalStyles.titleText}>Review Details</Text>
-    {/* <Flexbox /> */}
+ <View>
+  <Text>{title}</Text>
+  <Text>rating:{rating}</Text>
+ </View>
   </View>
   )
 }
