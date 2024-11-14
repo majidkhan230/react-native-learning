@@ -5,7 +5,7 @@ const index = () => {
   return (
   <View style={styles.container}>
     <Text  style={styles.text}>Hello world</Text>
- <Link href={"about"} style={styles.button}  >
+ <Link href={"mjd"} style={styles.button}  >
 <Text >Go to About Screen</Text>
  </Link>
   </View>
