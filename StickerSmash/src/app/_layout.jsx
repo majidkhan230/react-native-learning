@@ -5,6 +5,16 @@ const RootLayout = () => {
   return (
     <Stack>
       <Stack.Screen
+        name="(tabs)"
+        options={{
+          headerShown: false,
+        }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="+not-found"
+      ></Stack.Screen>
+
+      {/* <Stack.Screen
         name="index"
         options={{
           title: "Home",
@@ -15,7 +25,7 @@ const RootLayout = () => {
        options={{
         title:"About"
        }}
-       ></Stack.Screen>
+       ></Stack.Screen> */}
     </Stack>
   );
 };
