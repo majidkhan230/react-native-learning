@@ -1,27 +1,34 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
-import About from "./About";
-import ReviewDetails from "./ReviewDetails";
-import Home from "./Home";
-
+import { Link } from "expo-router";
 const index = () => {
-  const Stack = createNativeStackNavigator();
   return (
-    // <View>
-    //   <Text>hello</Text>
-    // </View>
+  <View style={styles.container}>
+    <Text  style={styles.text}>Hello world</Text>
+ <Link href={"about"} style={styles.button}  >
+<Text >Go to About Screen</Text>
+ </Link>
+  </View>
 
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="About" component={About} />
-        <Stack.Screen name="ReviewDetails" component={ReviewDetails} />
-      </Stack.Navigator>
 
   );
 };
 
 export default index;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    backgroundColor:"#25292e",
+    alignItems:"center",
+    justifyContent:"center",
+  },
+  text:{
+    color:"#fff",
+  },
+  button:{
+    fontSize:20,
+    color:"#fff",
+    textDecorationLine:"underline",
+  }
+});

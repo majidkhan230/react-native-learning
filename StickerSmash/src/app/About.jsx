@@ -1,13 +1,10 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { useNavigation } from '@react-navigation/native'
 
-const About = ({navigation}) => {
+const About = () => {
   return (
     <View>
       <Text>About</Text>
-      <Button title='go to review Detail' onPress={()=>navigation.navigate('ReviewDetails')}></Button>
-      
     </View>
   )
 }
