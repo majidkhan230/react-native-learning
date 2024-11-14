@@ -18,7 +18,7 @@ const index = () => {
         <ImageViewer imageSource={PlaceHolderImage}></ImageViewer>
       </View>
       <View style={styles.footer}>
-        <Button label={"choose a photo"}/>
+        <Button label={"choose a photo"} type={"primary"} />
         <Button label={"use this photo"}/>
       </View>
     </View>
