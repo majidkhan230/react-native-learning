@@ -2,8 +2,12 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Image } from "expo-image";
 
-const ImageViewer = ({ imageSource }) => {
-  return <Image source={imageSource} style={styles.image}></Image>;
+const ImageViewer = ({ imageSource,selectedImage }) => {
+console.log(selectedImage)
+console.log(imageSource)
+  imageLink = selectedImage ? {uri:selectedImage} : imageSource
+  
+  return <Image source={imageLink} style={styles.image}></Image>;
 };
 
 export default ImageViewer;

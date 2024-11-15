@@ -1,12 +1,29 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "expo-router";
 import { Image } from "expo-image";
 import ImageViewer from "../../components/ImageViewer";
-import Button from "@/src/components/Button"
+import Button from "@/src/components/Button";
+
+import * as ImagePicker from "expo-image-picker";
+
 const PlaceHolderImage = require("@/src/assets/images/background-image.png");
 
 const index = () => {
+
+const [selectedImage,setSelectedImage] = useState(null | undefined)
+
+
+  const imagePicker = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync();
+    if (!result.canceled) {
+      console.log(result.assets[0].uri);
+      setSelectedImage(result.assets[0].uri)
+    } else {
+      alert("You did not select any image.");
+    }
+  };
+
   return (
     <View style={styles.container}>
       {/* <Text style={styles.text}>Hello world</Text>
@@ -15,11 +32,15 @@ const index = () => {
       </Link> */}
       <View style={styles.imageContainer}>
         {/* <Image source={PlaceHolderImage} style={styles.image}></Image> */}
-        <ImageViewer imageSource={PlaceHolderImage}></ImageViewer>
+        <ImageViewer imageSource={PlaceHolderImage} selectedImage={selectedImage}></ImageViewer>
       </View>
       <View style={styles.footer}>
-        <Button label={"choose a photo"} type={"primary"} />
-        <Button label={"use this photo"}/>
+        <Button
+          label={"Choose a photo"}
+          type={"primary"}
+          onPress={imagePicker}
+        />
+        <Button label={"Use this photo"} />
       </View>
     </View>
   );
@@ -37,11 +58,11 @@ const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
   },
-  footer:{
+  footer: {
     flex: 1 / 3,
-    alignItems:"center",
+    alignItems: "center",
     // backgroundColor:'red',
-  }
+  },
   // text: {
   //   color: "#fff",
   // },
@@ -50,7 +71,7 @@ const styles = StyleSheet.create({
   //   color: "#fff",
   //   textDecorationLine: "underline",
   // },
- 
+
   // image:{
   //   width:320,
   //   height:400,
