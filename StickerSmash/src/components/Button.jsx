@@ -24,7 +24,7 @@ const Button = ({ label, type,onPress }) => {
     <View style={styles.btnContainer}>
       <Pressable
         style={styles.button}
-        onPress={() => alert("You pressed a button.")}
+        onPress={onPress}
       >
         <Text style={styles.label}>{label}</Text>
       </Pressable>
