@@ -8,19 +8,28 @@ import Button from "@/src/components/Button";
 import * as ImagePicker from "expo-image-picker";
 import CircleButton from "../../components/CircleButton";
 import IconButton from "../../components/IconButton";
+import EmojiPicker from "../../components/EmojiPicker";
 
 const PlaceHolderImage = require("@/src/assets/images/background-image.png");
 
 const index = () => {
   const [selectedImage, setSelectedImage] = useState(null | undefined);
   const [showAppOptions, setShowAppOptions] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
+
+  
   const onReset = () => {
     setShowAppOptions(false);
   };
 
   const onAddSticker = () => {
     // we will implement this later
+    setIsModalVisible(true)
+  };
+
+  const onModalClose = () => {
+    setIsModalVisible(false);
   };
 
   const onSaveImageAsync = async () => {
@@ -55,7 +64,7 @@ const index = () => {
       {showAppOptions ? (
         <View style={[styles.footer, styles.optionFooter]}>
           <IconButton icon="refresh" label="Reset" onPress={onReset} />
-          <CircleButton />
+          <CircleButton onPress={onAddSticker} />
           <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync} />
         </View>
       ) : (
@@ -71,6 +80,11 @@ const index = () => {
           />
         </View>
       )}
+  <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
+      <View>
+        <Text>hello</Text>
+      </View>
+      </EmojiPicker>
     </View>
   );
 };

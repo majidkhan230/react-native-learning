@@ -10,6 +10,7 @@ const IconButton = ({ icon, label, onPress }) => {
   )
 }
 
+
 export default IconButton
 
 const styles = StyleSheet.create({
