@@ -1,6 +1,6 @@
-import { FlatList, StyleSheet, Text, View,Pressable} from 'react-native'
+import { FlatList, StyleSheet, Text, View,Pressable, Platform} from 'react-native'
 import React, { useState } from 'react'
-
+import { Image } from 'expo-image';
 const EmojiList = ({ onSelect, onCloseModal }) => {
     const [emoji] = useState([
         require("../assets/images/emoji1.png"),
@@ -11,12 +11,12 @@ const EmojiList = ({ onSelect, onCloseModal }) => {
         require("../assets/images/emoji6.png"),
       ]);
   return (
-   <FlatList data={emoji} renderItem={({item})=>( <Pressable
+   <FlatList horizontal contentContainerStyle={styles.listContainer} data={emoji} renderItem={({item})=>( <Pressable
     onPress={() => {
       onSelect(item);
       onCloseModal();
     }}>
-    <Image source={item} key={index} style={styles.image} />
+    <Image source={item}  style={styles.image} />
   </Pressable>)} />
   )
 }

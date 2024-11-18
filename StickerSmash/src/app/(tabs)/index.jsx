@@ -19,7 +19,8 @@ const index = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [pickedEmoji, setPickedEmoji] = useState(undefined);
 
-  
+  console.log(pickedEmoji)
+
   const onReset = () => {
     setShowAppOptions(false);
   };
@@ -41,7 +42,7 @@ const index = () => {
     let result = await ImagePicker.launchImageLibraryAsync();
 
     if (!result.canceled) {
-      console.log(result.assets[0].uri);
+      // console.log(result.assets[0].uri);
       setSelectedImage(result.assets[0].uri);
       setShowAppOptions(true);
     } else {
