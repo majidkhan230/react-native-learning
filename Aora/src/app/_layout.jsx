@@ -8,13 +8,8 @@ const RootLayout = () => {
   return (
 <Stack>
   <Stack.Screen name="index" options={{headerShown:false}}></Stack.Screen>
-  <Stack.Screen name='profile'  options={
-    {
-    headerStyle:{
-      backgroundColor:"orange",
-    }
-    }
-    }></Stack.Screen>
+  <Stack.Screen name='(auth)'></Stack.Screen>
+  <Stack.Screen name='(tabs)'></Stack.Screen>
 </Stack>
   )
 }
