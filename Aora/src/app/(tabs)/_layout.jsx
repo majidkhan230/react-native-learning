@@ -5,7 +5,7 @@ import { icons } from "../../constants";
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
-    <View className="jusitfy-center items-center gap-1 ">
+    <View className="justify-center items-center   gap-1 ">
       <Image
         source={icon}
         resizeMode="contain"
@@ -13,7 +13,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
         className="w-6 h-6"
       ></Image>
       <Text
-        className={`text-sm  `}
+       className={`${focused ? "font-psemibold" : "font-pregular"} text-xs   `}
         style={{
           color: color,
         }}
@@ -30,12 +30,14 @@ const TabLayout = () => {
       screenOptions={{
         tabBarActiveTintColor: "red",
         tabBarShowLabel: false,
+
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
           headerShown: false,
+          tabBarIconStyle:{width:"100%",},
           tabBarIcon: ({ focused, color }) => (
             <TabIcon
               icon={icons.home}
@@ -50,6 +52,7 @@ const TabLayout = () => {
         name="create"
         options={{
           headerShown: false,
+          tabBarIconStyle:{width:"100%"},
           tabBarIcon: ({ focused, color }) => (
             <TabIcon
               icon={icons.plus}
@@ -64,6 +67,7 @@ const TabLayout = () => {
         name="profile"
         options={{
           headerShown: false,
+          tabBarIconStyle:{width:"100%"},
           tabBarIcon: ({ focused, color }) => (
             <TabIcon
               icon={icons.profile}
@@ -78,6 +82,7 @@ const TabLayout = () => {
         name="bookmark"
         options={{
           headerShown: false,
+          tabBarIconStyle:{width:"100%"},
           tabBarIcon: ({ focused, color }) => (
             <TabIcon
               icon={icons.bookmark}

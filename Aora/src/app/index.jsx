@@ -1,7 +1,11 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useNavigation } from 'expo-router'
+
 const index = () => {
+
+
+
   const navigation = useNavigation();
   return (
     <View className="bg-orange-600 flex-1 items-center justify-center">
